@@ -1,0 +1,7 @@
+name: mailcheck
+author: thinkphp
+current: v1.0
+category: Utilities
+tags: [Levenshtein,distance,filter,suggestions]
+docs: 
+demo: 

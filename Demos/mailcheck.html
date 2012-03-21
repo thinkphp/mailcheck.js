@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+   <title>Plugin Mailcheck MooTools</title>
+   <style type="text/css">
+    h1,body { font-family:'gill sans','dejavu sans',verdana,sans-serif; }
+    h1 { font-family:menlo,'dejavu sans mono',monospace; }
+    h1 {
+      font-weight:bold;
+      font-size:43px;
+      letter-spacing: -1px;
+      color:#000;
+      margin-bottom:0;
+      position:relative;
+    }
+   .didyoumean {font-weight: bold}
+   h1 b {color: #ccc}
+input[type=text]{			
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+      font-size: 24px;
+      margin-left: 20px
+}
+
+input[type=text]:focus{
+      -webkit-box-shadow:0 0 25px #ccc;
+	-moz-box-shadow:0 0 25px #ccc;
+	box-shadow:0 0 25px #ccc;
+      -webkit-transform: scale(1.05);
+      -moz-transform: scale(1.05);
+      transform: scale(1.05);
+}
+#intro {font-size: 20px}
+#ft {margin-top: 33%}
+   </style>
+   <script src="http://www.google.com/jsapi?key=ABQIAAAA1XbMiDxx_BTCY2_FkPh06RRaGTYH6UMl8mADNa0YKuWNNa8VNxQEerTAUcfkyrr6OwBovxn7TDAH5Q"></script>
+   <script type="text/javascript">google.load("mootools", "1.4");</script>
+   <script type="text/javascript" src="https://raw.github.com/thinkphp/String.levenshtein/master/Source/String.levenshtein-yui-compressed.js"></script>
+   <script type="text/javascript" src="mailcheck.js"></script>
+</head>
+<body>
+<h1><b>|</b>Plugin Mailcheck MooTools</h1>
+<p id="intro">A MooTools plugin that suggests a right domain when your users misspell it in an email address using Levenshtein Distance</p>
+<p><label for="email">Email</label><input type="text" name="email" id="email" value="adrian@yahuu.com"/></p>
+<div id="suggestions"></div>
+<script type="text/javascript">
+
+   var domains = ['hotmail.com', 'gmail.com', 'yahoo.com','aol.com','excite.com','thinkphp.ro']
+ 
+   $('email').addEvent('keyup',function(){
+
+           new Mailcheck($('email'),{domains: domains, onSuggested: function(suggestions){
+
+               $("suggestions").set('html', '<span class="didyoumean">Did you mean </span>' + suggestions.join(", ") + " ?");
+
+           },onEmpty: function(){
+
+                     //do stuff
+           }
+           })
+   })
+
+   $('email').fireEvent('keyup')
+
+   </script>
+
+<div id="ft"><p>@<a href="http://twitter.com/thinkphp">thinkphp</a> | <a href="http://thinkphp.ro/+">google+</a> | download <a href="http://mootools.net/forge/download/mailcheck/v1.0">Forge</a></p></div>
+</body>
+</html>
+
