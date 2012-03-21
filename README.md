@@ -5,8 +5,8 @@ A MooTools plugin that suggests a right domain when your users misspell it in an
 
 ![Screenshot](http://farm8.staticflickr.com/7216/6857832762_56f14145a9.jpg)
 
-What does it do?
-----------------
+How to use
+----------
 
 When your user types in "adrian@yahuu.com", Mailcheck will suggest "adrian@yahoo.com".
 
