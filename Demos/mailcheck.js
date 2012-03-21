@@ -1,3 +1,20 @@
+/*
+---
+description: A MooTools plugin that suggests a right domain when your users misspell it in an email address using Levenshtein Distance.
+
+authors:
+- Adrian Statescu (http://thinkphp.ro)
+
+license:
+- MIT-style license
+
+requires:
+ core/1.4.5: '*'
+
+provides: Mailcheck
+...
+*/
+
 var Mailcheck = new Class({
 
     Implements: [Options, Events],
@@ -11,14 +28,19 @@ var Mailcheck = new Class({
 
            if(element.get('value').indexOf('@') != -1) {
 
-           this.setOptions(options);
+              this.setOptions(options);
 
-           var input = element.get('value').split("@");
+              var input = element.get('value').split("@");
 
-           this.user = input[0];
+              this.user = input[0];
 
-           this._matchDomains(input[1]); 
+              this._matchDomains(input[1]); 
+
+           } else {
+
+              this.fireEvent('empty',["no match"])
            }
+
     },
     _matchDomains: function(input) {
 

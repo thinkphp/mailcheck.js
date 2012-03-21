@@ -38,7 +38,7 @@ input[type=text]:focus{
    <script src="http://www.google.com/jsapi?key=ABQIAAAA1XbMiDxx_BTCY2_FkPh06RRaGTYH6UMl8mADNa0YKuWNNa8VNxQEerTAUcfkyrr6OwBovxn7TDAH5Q"></script>
    <script type="text/javascript">google.load("mootools", "1.4");</script>
    <script type="text/javascript" src="https://raw.github.com/thinkphp/String.levenshtein/master/Source/String.levenshtein-yui-compressed.js"></script>
-   <script type="text/javascript" src="mailcheck.js"></script>
+   <script type="text/javascript" src="mailcheck-yui-compressed.js"></script>
 </head>
 <body>
 <h1><b>|</b>Plugin Mailcheck MooTools</h1>
@@ -55,9 +55,10 @@ input[type=text]:focus{
 
                $("suggestions").set('html', '<span class="didyoumean">Did you mean </span>' + suggestions.join(", ") + " ?");
 
-           },onEmpty: function(){
+           },onEmpty: function(empty){
 
-                     //do stuff
+               //do stuff
+               $("suggestions").set('html', '')
            }
            })
    })
