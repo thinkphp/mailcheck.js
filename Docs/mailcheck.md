@@ -1,7 +1,6 @@
 Class: Mailcheck {#Mailcheck}
 ==============================
 
-A MooTools plugin that suggests a right domain when your users misspell it in an email address using Levenshtein Distance.
 
 ### Syntax:
 
@@ -9,27 +8,32 @@ A MooTools plugin that suggests a right domain when your users misspell it in an
 
 ### Arguments:
 
-element `Element` - 
+- assertion `String` - a string containing a signed claim that proves the user is who they say they are.
 
-options `Object` - 
+- options   `object` - The options for the BrowserID instance.
 
 ### Events
 
-### onSuggestions
+### onRequest
 
-* `function` Function to execute when we have suggestions
-
-### Signature
-
-    onSuggestions();
-
-### onEmpty
-
-* `function` Function to execute when haven't suggestions
+* `function` Function to execute when you make a request.
 
 ### Signature
 
-    onEmpty
+    onRequest();
+
+### onComplete
+
+* `function` Function to execute when the request is completed.
+
+### Signature
+
+    onComplete(response);
 
 ### Arguments
+
+- `object` The verifier will check that the assertion was meant for your website and is valid
+           returns => {status: 'okay','email': 'user@mozilla.com'}, 
+           otherwise returns {status: 'failure','reason': 'audience missmatch'}, 
+
 
