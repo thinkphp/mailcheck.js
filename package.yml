@@ -3,5 +3,5 @@ author: thinkphp
 current: v1.0
 category: Utilities
 tags: [Levenshtein,distance,filter,suggestions]
-docs: 
-demo: 
+docs: https://github.com/thinkphp/mailcheck.js/blob/master/Docs/mailcheck.md
+demo: http://thinkphp.ro/apps/js-hacks/mailcheck.js/Demos/mailcheck.html
