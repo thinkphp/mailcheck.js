@@ -28,14 +28,19 @@ var Mailcheck = new Class({
 
            if(element.get('value').indexOf('@') != -1) {
 
-           this.setOptions(options);
+              this.setOptions(options);
 
-           var input = element.get('value').split("@");
+              var input = element.get('value').split("@");
 
-           this.user = input[0];
+              this.user = input[0];
 
-           this._matchDomains(input[1]); 
+              this._matchDomains(input[1]); 
+
+           } else {
+
+              this.fireEvent('empty',["no match"])
            }
+
     },
     _matchDomains: function(input) {
 
