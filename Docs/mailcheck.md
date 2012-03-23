@@ -31,6 +31,10 @@ A MooTools plugin that suggests a right domain when your users misspell it in an
 
     onSuggested(suggestions);
 
+### Arguments
+
+- suggestions `Array` - An array containing the suggestions.
+
 ### onEmpty
 
 * `function` callback(function) to execute when we haven't suggestions.
@@ -41,5 +45,5 @@ A MooTools plugin that suggests a right domain when your users misspell it in an
 
 ### Arguments
 
-
+- empty `Array`
 
