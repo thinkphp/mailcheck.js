@@ -8,10 +8,17 @@ A MooTools plugin that suggests a right domain when your users misspell it in an
 How to use
 ----------
 
+Include MooTools, Mailcheck.js and String.levenshtein.js into the page:
+
+    <script type="text/javascript" src="mootools.js"></script>
+    <script type="text/javascript" src="https://github.com/thinkphp/String.levenshtein/blob/master/Source/String.levenshtein.js"></script>
+    <script src="mailcheck.js" type="text/javascript"></script>
+
 When your user types in "adrian@yahuu.com", Mailcheck will suggest "adrian@yahoo.com".
 
         #HTML
        <p><label for="email">Email</label><input type="text" name="email" id="email" value="adrian@yahuu.com"/></p>
+       <div id="suggestions"></div>
 
 When DOM is ready:
 
